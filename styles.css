@@ -1,0 +1,329 @@
+/*
+    Liste des sons : zone en grille qui affiche les cartes de titres.
+    - display: grid pour une mise en page en colonnes flexibles
+    - gap: espacement entre les cartes
+    - background / border-radius / box-shadow pour l'apparence
+*/
+.songs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 26px;
+    margin: 48px 0;
+    padding: 28px 16px;
+    background: linear-gradient(135deg, #424346 40%, #cf2f2f 100%);
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+}
+/*
+    Carte d'un titre (song-card) : style des petites cartes de la page Music
+    - background, padding, font-size définissent l'apparence
+    - transition + hover pour l'interaction utilisateur
+*/
+.song-card {
+    background: rgba(44, 62, 80, 0.85);
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(44,62,80,0.13);
+    padding: 22px 12px;
+    font-size: 1.12rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 1.5px;
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+    cursor: pointer;
+    backdrop-filter: blur(1.5px);
+    border: 1.5px solid #6a82fb;
+    position: relative;
+    overflow: hidden;
+}
+/* Effet décoratif (overlay gradient) derrière le texte de la carte */
+.song-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 16px;
+    background: linear-gradient(120deg, rgba(106,130,251,0.18) 40%, rgba(252,92,125,0.18) 100%);
+    z-index: 0;
+}
+.song-card span {
+    position: relative;
+    z-index: 1;
+}
+.song-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 36px rgba(106,130,251,0.22);
+    background: rgba(84, 84, 84, 0.92);
+    color: #fff;
+    border-color: #fc5c7d;
+}
+/*
+    Cartes de playlists/albums : contiennent image + titre + bouton
+    - conception en colonne (display:flex + flex-direction: column)
+    - border et shadows pour l'effet carte
+*/
+.playlist-card {
+    background: linear-gradient(120deg, #fff 60%, #a7c7e7 100%);
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 240px;
+    min-width: 180px;
+    transition: transform 0.22s, box-shadow 0.22s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #a7c7e7;
+}
+/* Effet au survol : soulève légèrement la carte */
+.playlist-card:hover {
+    transform: translateY(-10px) scale(1.07);
+    box-shadow: 0 12px 36px rgba(167,199,231,0.18);
+    border-color: #bf1919;
+}
+/* Image de la playlist : couvre la partie haute de la carte */
+.playlist-img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px solid #a7c7e7;
+}
+/* Corps de la playlist : contient titre, description et bouton */
+.playlist-body {
+    padding: 16px 10px 14px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Titre de la playlist */
+.playlist-title {
+    color: #bf1919;
+    font-size: 1.12rem;
+    margin-bottom: 7px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+/* Description courte sous le titre */
+.playlist-text {
+    color: #222;
+    font-size: 0.97rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* Bouton d'accès externe (YouTube, Spotify...) */
+.playlist-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff0000, #a7c7e7);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, transform 0.2s;
+    font-size: 1rem;
+    margin-top: 4px;
+    border: none;
+}
+.playlist-btn:hover {
+    background: linear-gradient(90deg, #a7c7e7, #ff0000);
+    transform: scale(1.09);
+}
+/* Formulaire de contact : disposition verticale et espacements */
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+/* Groupe de champs du formulaire (label + input/textarea) */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+/* Style des labels du formulaire */
+.contact-form label {
+    font-weight: bold;
+    color: #222;
+}
+/* Inputs et textarea du formulaire */
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #a7c7e7;
+    font-size: 1rem;
+    background: #f8fafc;
+    transition: border 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border: 1.5px solid #bf1919;
+    outline: none;
+}
+.contact-form button {
+    margin-top: 10px;
+}
+/* Wrapper pour l'image principale : centrage */
+.main-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+/* Style global du body : fond en dégradé et police par défaut */
+body {
+    background: linear-gradient(135deg, #f8fafc 60%, #a7c7e7 100%);
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+/* Conteneur principal (.container) : largeur max, fond blanc, padding */
+.container {
+    max-width: 800px;
+    margin: 60px  auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.10);
+}
+/* Style du titre principal */
+h1 {
+    text-align: center;
+    color: rgb(250, 250, 250);
+    font-family: Arial, sans-serif;
+    background-color: rgb(1, 1, 1);
+    padding: 30px;
+    border-radius: 10px;    
+}
+/* Modern Card Style */
+/* Section albums : grille qui regroupe les cartes d'albums */
+.albums {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    margin: 50px 0;
+    padding: 30px 20px;
+    background: linear-gradient(120deg, #e3eafc 60%, #f8fafc 100%);
+    border-radius: 18px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+}
+/* Ancien style de 'card' (peut être utilisé pour d'autres présentations) */
+.card {
+    background: linear-gradient(120deg, #bf1919 70%, #a7c7e7 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(12, 12, 12, 0.13);
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 220px;
+    min-width: 180px;
+    transition: transform 0.22s, box-shadow 0.22s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #fff;
+}
+/* Hover pour les anciennes cards */
+.card:hover {
+    transform: translateY(-8px) scale(1.06);
+    box-shadow: 0 8px 32px rgba(191,25,25,0.18);
+    border-color: #a7c7e7;
+}
+/* Image des anciennes cards */
+.card-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 2px solid #fff;
+}
+/* Corps des anciennes cards */
+.card-body {
+    padding: 18px 12px 16px 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Titre des anciennes cards */
+.card-title {
+    color: #fff;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+}
+/* Texte des anciennes cards */
+.card-text {
+    color: #f8fafc;
+    font-size: 0.98rem;
+    margin-bottom: 12px;
+    text-align: center;
+}
+/* Bouton générique (.btn) : utilisé pour Spotify etc. */
+.btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #a7c7e7, #bf1919);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, transform 0.2s;
+    font-size: 1rem;
+    margin-top: 4px;
+}
+/* Effet hover sur le bouton générique */
+.btn:hover {
+    background: linear-gradient(90deg, #bf1919, #a7c7e7);
+    transform: scale(1.08);
+}
+/* Navigation Modern Buttons */
+/* Barre de navigation (boutons en haut) */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0 0 0;
+}
+/* Style des boutons de navigation */
+.nav-btn {
+    background: #222;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, transform 0.2s;
+}
+/* Hover pour les boutons de navigation */
+.nav-btn:hover {
+    background: #ff7e5f;
+    color: #fff;
+    transform: scale(1.07);
+}
+/* Main image style */
+/* Style de l'image principale */
+.main-img {
+    display: block;
+    margin: 0 auto 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+
+@media screen and (max-width: 600px) {
+    .main-img {
+        width: 90%;
+    }
+}
+                  

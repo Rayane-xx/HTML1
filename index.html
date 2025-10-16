@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<!--
+  Déclaration du type de document : indique au navigateur que le document est en HTML5.
+-->
+<html lang="fr">
+
+<head>
+    <!-- Meta et titre : informations pour le navigateur et les moteurs de recherche -->
+    <title> WERENOI</title>
+    <meta charset="UTF-8"> <!-- Encodage des caractères (UTF-8 recommandé) -->
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers la feuille de style CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Rend la page responsive -->
+    
+</head>
+
+<body>
+    <!-- Conteneur principal qui centralise le contenu et applique le style de fond blanc -->
+    <div class="container">
+        <!-- Titre principal de la page -->
+        <h1>WERENOI</h1>
+
+        <!-- Image principale : wrapper permet de centrer l'image et d'ajouter des marges -->
+        <div class="main-img-wrapper">
+            <!--
+                Balise <img> :
+                - src : chemin vers le fichier image
+                - alt : texte alternatif (important pour l'accessibilité)
+                - class : pour cibler l'image en CSS
+            -->
+            <img src="Werenoi concert.avif" alt="Werenoi" class="main-img" width="500" height="270">
+        </div>
+
+        <!-- Paragraphe descriptif : texte d'introduction sur l'artiste -->
+        <p>
+            Werenoi (chanteur: français) Werenoi de son vrai nom Jérémy Bana Owona, né le 30 janvier 1994 à Melun
+            (Seine-et-Marne) et mort le 17 mai 2025 dans le 13e arrondissement de Paris, est un rappeur, chanteur et
+            auteur-compositeur-interprète français originaire de Montreuil.
+        </p>
+
+        <!-- Fin du conteneur .container -->
+    </div>
+
+    <!-- Navigation principale : boutons/liens vers d'autres pages ou sections -->
+    <nav class="nav-buttons">
+        <!-- Chaque <a> est un lien cliquable : href définit la destination -->
+        <a href="#" class="nav-btn">Accueil</a> <!-- Lien vers la page d'accueil (ici ancre '#') -->
+        <a href="contact.html" class="nav-btn">Contact</a> <!-- Lien vers la page de contact -->
+        <a href="songs.html" class="nav-btn">Music</a> <!-- Lien vers la page qui liste les sons -->
+    </nav>
+
+    <!-- Section albums/playlists : carte pour chaque album -->
+    <div class="albums">
+        <!-- Une "playlist-card" contient l'image, le titre, une description et un bouton vers YouTube -->
+        <div class="playlist-card">
+            <!-- Image de la playlist -->
+            <img src="Werenoi2.jpg" alt="Pyramide 1" class="playlist-img">
+            <div class="playlist-body">
+                <!-- Titre de la playlist -->
+                <h5 class="playlist-title">Pyramide 1</h5>
+                <!-- Petite description de l'album -->
+                <p class="playlist-text">Dans la Légende.</p>
+                <!-- Bouton externe vers la playlist YouTube (target="_blank" ouvre dans un nouvel onglet) -->
+                <a href="https://youtube.com/playlist?list=PLYJtgwuHZmUgUpM7-wFSV-NeFkMMyRXkK&si=K4gLQly7Zq4KBAK_" class="playlist-btn" target="_blank">Voir sur YouTube</a>
+            </div>
+        </div>
+
+        <!-- Répéter une carte pour chaque album : structure identique -->
+        <div class="playlist-card">
+            <img src="Pyramide 1.jpg" alt="Diamon noir" class="playlist-img">
+            <div class="playlist-body">
+                <h5 class="playlist-title">Diamon noir</h5>
+                <p class="playlist-text">L'album Diamon noir.</p>
+                <a href="https://www.youtube.com/playlist?list=PLQK1A2b3C4d5E6f7G8h9I0j" class="playlist-btn" target="_blank">Voir sur YouTube</a>
+            </div>
+        </div>
+
+        <div class="playlist-card">
+            <img src="Pyramide 2.jpeg" alt="Carré" class="playlist-img">
+            <div class="playlist-body">
+                <h5 class="playlist-title">Carré</h5>
+                <p class="playlist-text">L'album Carré.</p>
+                <a href="https://www.youtube.com/playlist?list=PLQK3K4l5M6n7O8p9Q0r1S2t" class="playlist-btn" target="_blank">Voir sur YouTube</a>
+            </div>
+        </div>
+
+        <div class="playlist-card">
+            <img src="Pyramide 2.jpeg" alt="Pyramide 2" class="playlist-img">
+            <div class="playlist-body">
+                <h5 class="playlist-title">Pyramide 2</h5>
+                <p class="playlist-text">L'album Pyramide 2.</p>
+                <a href="https://youtube.com/playlist?list=PLYJtgwuHZmUiPrHWuqdbSYOk2uRHYSuV3&si=MFfp0TKFpeSA9TcK" class="playlist-btn" target="_blank">Voir sur YouTube</a>
+            </div>
+        </div>
+
+        <div class="playlist-card">
+            <img src="Werenoi2.jpg" alt="10.03.2023" class="playlist-img">
+            <div class="playlist-body">
+                <h5 class="playlist-title">10.03.2023</h5>
+                <p class="playlist-text">L'album 10.03.2023.</p>
+                <a href="https://www.youtube.com/playlist?list=PLQK5E6f7G8h9I0j1A2b3C4d" class="playlist-btn" target="_blank">Voir sur YouTube</a>
+            </div>
+        </div>
+
+        <div class="playlist-card">
+            <img src="Werenoi2.jpg" alt="Album Miroir" class="playlist-img">
+            <div class="playlist-body">
+                <h5 class="playlist-title">Miroir</h5>
+                <p class="playlist-text">L'album Miroir.</p>
+                <a href="https://www.youtube.com/playlist?list=PLQK6F7g8H9i0J1a2B3c4D5e" class="playlist-btn" target="_blank">Voir sur YouTube</a>
+            </div>
+        </div>
+
+        <div class="playlist-card">
+            <img src="Pyramide 1.jpg" alt="Album Or Noir" class="playlist-img">
+            <div class="playlist-body">
+                <h5 class="playlist-title">Or Noir</h5>
+                <p class="playlist-text">L'album Or Noir.</p>
+                <a href="https://www.youtube.com/playlist?list=PLQK7G8h9I0j1A2b3C4d5E6f" class="playlist-btn" target="_blank">Voir sur YouTube</a>
+            </div>
+        </div>
+
+        <!-- Exemple d'une carte au format "card" (ancien style) : conservée si nécessaire -->
+        <div class="card">
+            <img src="Pyramide 1.jpg" alt="Album Or Noir" class="card-img">
+            <div class="card-body">
+                <h5 class="card-title">Or Noir</h5>
+                <p class="card-text">L'album Or Noir.</p>
+                <!-- Lien externe vers Spotify (ou autre) -->
+                <a href="https://open.spotify.com/album/7G8h9I0j1A2b3C4d5E6f" class="btn btn-primary" target="_blank">Playlist Or Noir</a>
+            </div>
+        </div>
+
+    </div> <!-- fin .albums -->
+
+</body>
+
+</html>
